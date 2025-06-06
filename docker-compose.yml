@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  converter-app:
+    build: .
+    container_name: main-converter
+    volumes:
+      - ./uploads:/app/uploads
+      - ./processed:/app/processed
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
